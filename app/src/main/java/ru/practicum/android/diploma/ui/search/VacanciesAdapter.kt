@@ -35,7 +35,10 @@ class VacanciesAdapter(
         diffVacancy.dispatchUpdatesTo(this)
     }
 
-    fun clear() = vacancyList.clear()
+    fun clear() {
+        vacancyList.clear()
+        notifyDataSetChanged()
+    }
 
     fun interface VacancyClickListener {
         fun onVacancyClick(vacancyId: String)
